@@ -68,6 +68,13 @@ h1 {
   }
 }
 
+@media (min-width: 1300px) {
+  .fullscreen-bg__video {
+    height: 100vh;
+    width: 100vh;
+  } 
+}
+
 @media (max-aspect-ratio: 16/9) {
   .fullscreen-bg__video {
     width: 300%;
