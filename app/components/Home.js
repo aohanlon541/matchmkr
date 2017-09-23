@@ -3,17 +3,12 @@ var Link = require("react-router").Link;
 
 var Home = React.createClass({
 
-   constructor: function(){
-        super(props)
-    },
-
   render: function() {
 
     return (
       <div className="main-container">
 
-          
-          {/* Navbar */}
+           {/*Navbar */}
                 <nav className="navbar navbar-default">
                     <div className="container-fluid">
                         <div className="navbar-header">
@@ -54,7 +49,6 @@ var Home = React.createClass({
 
           {/*{this.props.children}*/}
 
-        </div>
       </div>
     );
   }

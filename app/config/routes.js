@@ -15,19 +15,19 @@ var Router = router.Router;
 
 // Include the browserHistory prop to configure client side routing
 // 
+var browserHistory = router.browserHistory;
 
 // Reference the high-level components
 var Home = require("../components/Home");
-var Profile = require("../components/Profile");
-
-React.unmountComponentAtNode(document.getElementById('container'));
+var Login = require("../components/Login");
 
 
 // Export the Routes
 module.exports = (
   // High level component is the Router component.
-  <Router>
-    <Route path="/" component={Home}/>
+  <Router history={browserHistory}>
+      <Route path="/" component={Home}/>
+    
 
       {/* If user selects Search or Saved show the appropriate component */}
       {/*<Route path="/search" component={Search} />*/}

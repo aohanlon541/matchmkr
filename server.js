@@ -62,6 +62,16 @@ app.get("/", function(req, res) {
   res.sendFile(__dirname + "/public/home.html");
 });
 
+app.get("/login", function(req, res) {
+  res.sendFile(__dirname + "/public/login.html");
+});
+
+app.post('/login', 
+  passport.authenticate('local', { failureRedirect: '/login' }),
+  function(req, res) {
+    res.redirect('/');
+  });
+
 app.get("/profiles", function(req, res) {
   // Grab every doc in the Articles array
   Profiles.find({}, function(error, doc) {
