@@ -14,6 +14,10 @@ var ProfileSchema = new Schema({
         type: String,
         required: true
     },
+    password: {
+        type: String,
+        required: true
+    }
 });
 
 // Create the Article model with the ArticleSchema

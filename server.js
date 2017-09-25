@@ -66,20 +66,12 @@ app.get("/login", function(req, res) {
   res.sendFile(__dirname + "/public/login.html");
 });
 
-app.post('/login', 
-  passport.authenticate('local', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/');
-  });
 
-app.get("/profiles", function(req, res) {
-  // Grab every doc in the Articles array
+app.get("/api/profiles", function(req, res) {
   Profiles.find({}, function(error, doc) {
-    // Log any errors
     if (error) {
       console.log(error);
     }
-    // Or send the doc to the browser as a json object
     else {
       res.json(doc);
     }
@@ -87,13 +79,13 @@ app.get("/profiles", function(req, res) {
 });
 
 
-// app.post('/login',
-//   passport.authenticate('local'),
-//   function(req, res) {
-//     // If this function gets called, authentication was successful.
-//     // `req.user` contains the authenticated user.
-//     res.redirect('/users/' + req.user.username);
-//   });
+app.post('/login',
+  passport.authenticate('local'),
+  function(req, res) {
+    // If this function gets called, authentication was successful.
+    // `req.user` contains the authenticated user.
+    res.redirect('/users/' + req.user.username);
+  });
 
 
 // -------------------------------------------------

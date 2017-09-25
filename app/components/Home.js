@@ -1,5 +1,7 @@
 var React = require("react");
 var Link = require("react-router").Link;
+var Profile = require("./Profile");
+
 
 var Home = React.createClass({
 
@@ -45,9 +47,7 @@ var Home = React.createClass({
                     </div>
                   </nav>
 
-                  
-
-          {/*{this.props.children}*/}
+          <Profile/>
 
       </div>
     );
