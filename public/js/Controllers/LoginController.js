@@ -1,4 +1,4 @@
-angular.module('FruitApp.LoginController', [])
+angular.module('MatchMkrApp.LoginController', [])
 .controller('LoginController', ['$scope', 'userFactory', function ($scope, userFactory) {
     //Login form listener
     var working = false;
@@ -10,7 +10,6 @@ angular.module('FruitApp.LoginController', [])
             $state = $this.find('button > .state');
         $this.addClass('loading');
         $state.html('Authenticating');
-
         userFactory.login({
             username: username,
             password: password
@@ -27,12 +26,12 @@ angular.module('FruitApp.LoginController', [])
                     $this.removeClass('ok loading');
                     working = false;
                     $scope.$parent.loggedIn = true;
+                    $scope.$parent.loginPage = false;
                     $scope.$apply();
                     //load everything
 
                 }, 1000);
             }, 1500);
-
         }, function(response) {
             //error
             console.error(response);
@@ -49,4 +48,5 @@ angular.module('FruitApp.LoginController', [])
             }, 1500);
         });
     };
+
 }]);

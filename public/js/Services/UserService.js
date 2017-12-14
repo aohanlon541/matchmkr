@@ -1,4 +1,4 @@
-angular.module('FruitApp.UserService', [])
+angular.module('MatchMkrApp.UserService', [])
 .factory('userFactory', function ($resource) {
     return $resource(
         '/api/0.1/user/:id', {

@@ -42,6 +42,8 @@ html
         link(rel='stylesheet', href='css/style.css')
         link(rel='stylesheet', href='css/responsive.css')
         link(rel='stylesheet', href='css/helpers.css')
+        link(rel='stylesheet', href='css/signup.css')
+
 
         //- scripts
         script(src='/js/vendor/angular.min.js')
@@ -51,8 +53,8 @@ html
         script(src='/js/vendor/i18next.min.js')
         script(src='/js/vendor/ng-i18next.min.js')
 
-    body(ng-app='FruitApp', ng-controller='MainController')
-        +custom_header('Match Maker', 'exit')
+    body(ng-app='MatchMkrApp', ng-controller='MainController')
+        +custom_header('Match Maker', 'Exit', 'Create New Account')
         block content
 
         //- scripts
@@ -60,8 +62,11 @@ html
         script(src="https://storage.googleapis.com/code.getmdl.io/1.0.4/material.min.js")
         script(src='js/cookies.js')        
         script(src='js/app.js')
+
         script(src='js/Services/UserService.js')
         script(src='js/Services/FruitService.js')
+
         script(src='js/Controllers/LoginController.js')
         script(src='js/Controllers/TableController.js')
         script(src='js/Controllers/CardController.js')
+        script(src='js/Controllers/NewAccountController.js')

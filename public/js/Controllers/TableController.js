@@ -1,4 +1,4 @@
-angular.module('FruitApp.TableController', [])
+angular.module('MatchMkrApp.TableController', [])
 .controller('TableController', ['$scope', 'fruitFactory', function ($scope, fruitFactory) {
     //Update fruits
     $scope.$parent.update_fruits = function(){

@@ -22,17 +22,35 @@ mixin custom_footer(about_txt)
 
 //- login
 mixin login_form
-    form.login.ng-hide#login(ng-controller="LoginController", ng-hide="loggedIn")
+    form.login.ng-hide#login(ng-controller="LoginController", ng-hide="loggedIn || newAccount")
         p.title= 'Login to Match Maker'
-        img(src="http://www.clker.com/cliparts/w/d/Y/M/v/G/tennis-rackets-hi.png")
         //- loader
         .login-wrapper#login-wrapper
             input#username(tabindex="1", autocapitalize="off", autocorrect="off", type="text", placeholder="username", autofocus, , ng-model='username')
             i.fa.fa-user
             input#password(tabindex="2", type="password", placeholder="password", ng-model='password')
             i.fa.fa-key
-
             a(href="#")= 'Forgot your password?'
             button(ng-click='send(username, password)')
                 i.spinner
                 span.state= 'submit'
+
+//-signup form
+mixin signup_form
+    form.signup.ng-hide#signup(ng-controller="NewAccountController", ng-show="newAccount", ng-hide="loggedIn || loginPage")
+        p.title= 'Create new account'
+        //- loader
+        .signup-wrapper#signup-wrapper
+            form
+                fieldset
+                    .form-group
+                    label(for='exampleInputEmail1') Email address
+                    input#exampleInputEmail1.form-control(type='email', aria-describedby='emailHelp', placeholder='Enter email')
+                    small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+                    .form-group
+                    label(for='exampleInputPassword1') Password
+                    input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+                    button(ng-click='send(username, password)')
+                        span.state= 'submit'
+
+

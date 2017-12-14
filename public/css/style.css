@@ -90,7 +90,7 @@ body header{
 
 section.main{
     position: relative;
-    min-height: 60vh;
+    min-height: 30vh;
 }
 
 section.main table{
